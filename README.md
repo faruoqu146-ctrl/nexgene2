@@ -1,6 +1,11 @@
-# NexGene v0.4
+# NexGene v0.5
 
-Identity & Authentication milestone.
+Daily NexGene experience milestone:
+- authenticated user
+- morning check-in
+- evening check-in
+- chronological timeline
+- simple longitudinal baseline insights
 
 ## Run
 ```bash

@@ -1,13 +1,14 @@
-# NexGene v0.4 Testing
+# NexGene v0.5 Testing
 
 1. Run `docker compose up --build`.
 2. Open `http://localhost:8000/docs`.
-3. Register two accounts using `POST /api/v1/auth/register`.
-4. Use the returned bearer token with Authorize.
-5. Call `/api/v1/auth/me`.
-6. Create an observation. The request contains no `user_id`.
-7. Log in as the second user and list observations.
-8. Confirm the second user cannot see the first user's observation.
-9. Run `docker compose exec api pytest -q`.
+3. Register or log in.
+4. Click **Authorize** and paste `Bearer <access_token>`.
+5. POST `/api/v1/checkins/morning`.
+6. POST `/api/v1/checkins/evening`.
+7. GET `/api/v1/timeline`.
+8. GET `/api/v1/checkins/insights`.
 
-The normal observation API now derives identity entirely from the authenticated token.
+Repeat the check-ins across several days. Once enough observations exist, the insight endpoint can surface simple baseline/trend messages.
+
+The insight engine is intentionally rule-based at this stage. It is not medical advice and does not diagnose disease or estimate cancer risk.
